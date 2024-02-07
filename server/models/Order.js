@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
+//order schema
 const orderSchema = new Schema({
   purchaseDate: {
     type: Date,
@@ -15,6 +16,7 @@ const orderSchema = new Schema({
   ]
 });
 
+//create order model using orderschema
 const Order = mongoose.model('Order', orderSchema);
 
 module.exports = Order;

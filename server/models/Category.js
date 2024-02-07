@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
+//category schema
 const categorySchema = new Schema({
   name: {
     type: String,
@@ -10,6 +11,7 @@ const categorySchema = new Schema({
   }
 });
 
+//create category model using categorySchema
 const Category = mongoose.model('Category', categorySchema);
 
 module.exports = Category;
