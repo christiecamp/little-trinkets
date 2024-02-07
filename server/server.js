@@ -19,7 +19,7 @@ const startApolloServer = async () => {
   await server.start();
 
   trinket.use(express.urlencoded({ extended: false }));
-  app.use(express.json());
+  trinket.use(express.json());
 
   // Serve up static assets
   trinket.use('/images', express.static(path.join(__dirname, '../client/images')));
