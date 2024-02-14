@@ -9,6 +9,9 @@ const tiny = require('./config/connection');
 
 const PORT = process.env.PORT || 3001;
 const trinket = express();
+
+//apollo is now cache state manager - redux is for other data
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
