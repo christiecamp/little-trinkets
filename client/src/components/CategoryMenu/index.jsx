@@ -1,6 +1,9 @@
+//react dependencies
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+//import apollo client dependencies
 import { useQuery } from '@apollo/client';
-import { useStoreContext } from '../../utils/GlobalState';
+//import state management dependencies
 import {
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,
@@ -8,14 +11,16 @@ import {
 import { QUERY_CATEGORIES } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 
+//import state management
 function CategoryMenu() {
-  const [state, dispatch] = useStoreContext();
-
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
   const { categories } = state;
-
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
+  //if categoryData exists or has changed from the response of useQuery, then run dispatch()
   useEffect(() => {
+    //retrieved from server
     if (categoryData) {
       dispatch({
         type: UPDATE_CATEGORIES,
@@ -34,6 +39,7 @@ function CategoryMenu() {
     }
   }, [categoryData, loading, dispatch]);
 
+  //handle click function
   const handleClick = (id) => {
     dispatch({
       type: UPDATE_CURRENT_CATEGORY,
