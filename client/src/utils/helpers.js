@@ -6,14 +6,14 @@ export function pluralize(name, count) {
 }
 
 export function idbPromise(storeName, method, object) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     //open connection to database
     const request = window.indexedDB.open('shop-shop', 1);
     //create variables to hold reference to database, transaction (tx), and object store
     let db, tx, store;
 
     //if version has changed (or if this is the first time using the database), run this method and create the three object stores
-    request.onupgradeneeded = function(e) {
+    request.onupgradeneeded = function() {
       const db = request.result;
       //create object store for each type of data and set "primary" key index to be the `_id` of the data
       db.createObjectStore('products', { keyPath: '_id' });
@@ -22,12 +22,12 @@ export function idbPromise(storeName, method, object) {
     };
 
     //handle any errors with connecting
-    request.onerror = function(e) {
+    request.onerror = function() {
       console.log('There was an error');
     };
 
     //open success connection
-    request.onsuccess = function(e) {
+    request.onsuccess = function() {
       //save a reference of the database to the `db` variable
       db = request.result;
       //open a transaction and access the object store
@@ -49,9 +49,10 @@ export function idbPromise(storeName, method, object) {
           break;
         //get all from cart
         case 'get':
-          const all = store.getAll();
-          all.onsuccess = function() {
-            resolve(all.result);
+          // eslint-disable-next-line no-case-declarations
+          const everything = store.getAll();
+          everything.onsuccess = function() {
+            resolve(everything.result);
           };
           break;
         //delete from cart
