@@ -128,6 +128,10 @@ db.once('open', async () => {
 
   console.log('products seeded');
 
+  //delete all users
+  await User.deleteMany();
+
+  //create new users
   await User.create({
     firstName: 'Pamela',
     lastName: 'Washington',

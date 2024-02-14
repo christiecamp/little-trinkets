@@ -41,8 +41,32 @@ const startApolloServer = async () => {
 
   tiny.once('open', () => {
     trinket.listen(PORT, () => {
-      console.log(`API server running on port ${PORT}!`);
-      console.log(`Use GraphQL at http://localhost:${PORT}/graphql`);
+            console.log(`
+============================================================
+               LITTLE TRINKETS BACK END SERVER
+============================================================
+                             _        ,
+                            (_l______/________
+                               l-|-|/|-|-|-|-|/
+                                l==/-|-|-|-|-/
+                                 l/|-|-|-|,-'
+                                  l--|-'''
+                                   l_j________
+                            ..... (_)     (_)
+
+              ==============================
+                  Shop 'till you drop!
+
+                 x     *     *     *   x
+
+                 http://localhost:${PORT}
+              ==============================
+
+
+              graphql path:
+              http://localhost:${PORT}/graphql
+      `);    
+      
     });
   });
 };

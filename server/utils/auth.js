@@ -8,15 +8,14 @@ module.exports = {
     //token may be sent via req.body, req.query, or headers
     let token = req.body.token || req.query.token || req.headers.authorization;
 
-    //split token into an array and return actual token
+    //split token into an array - return actual token
     if (req.headers.authorization) {
       token = token.split(' ').pop().trim();
     }
-
+    //if no token - return req object
     if (!token) {
       return req;
     }
-
     //try to verify and decode token
     try {
       const { data } = jwt.verify(token, secret, { maxAge: expiration });
