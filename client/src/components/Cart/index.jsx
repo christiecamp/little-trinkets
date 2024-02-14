@@ -1,18 +1,26 @@
+//react dependencies
 import { useEffect } from 'react';
-import { loadStripe } from '@stripe/stripe-js';
+import { useDispatch, useSelector } from 'react-redux';
+//import apollo
 import { useLazyQuery } from '@apollo/client';
+//import stripe
+import { loadStripe } from '@stripe/stripe-js';
+//import util dependencies
+import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import { QUERY_CHECKOUT } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
-import CartItem from '../CartItem';
 import Auth from '../../utils/auth';
-import { useStoreContext } from '../../utils/GlobalState';
-import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
+//import components
+import CartItem from '../CartItem';
+//import css
 import './style.css';
 
+//return stripe promise
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
+//create cart component
 const Cart = () => {
-  const [state, dispatch] = useStoreContext();
+  const [dispatch] = useDispatch();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
   useEffect(() => {
