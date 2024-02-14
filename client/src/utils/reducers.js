@@ -22,6 +22,7 @@ export const initialState = {
 //set initial state of the reducer
 //reducer - function that accepts the current state and an action. It returns a new state based on that action
 export const reducer = (state = initialState, action) => {
+  let newState;
   switch (action.type) {
 
     //returns copy of state with an update products array
@@ -65,7 +66,7 @@ export const reducer = (state = initialState, action) => {
     //iterate through each item in the cart and check to see if the `product._id` matches the `action._id`
     //remove from cart and set the updated state to a variable called `newState`
     case REMOVE_FROM_CART:
-      const newState = state.cart.filter((product) => {
+      newState = state.cart.filter(product => {
         return product._id !== action._id;
       });
       //return a copy of state and check to see if the cart is empty
