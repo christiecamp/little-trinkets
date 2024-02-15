@@ -5,11 +5,11 @@ import {
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
-import { Provider } from 'react-redux';
+// import { Provider } from 'react-redux';
 import { setContext } from '@apollo/client/link/context';
 //import components
 import Nav from './components/Nav';
-import store from './utils/store';
+import StoreProvider from './utils/store';
 
 //create http link
 const httpLink = createHttpLink({
@@ -38,7 +38,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <StoreProvider store={store}>
+      <StoreProvider>
         <Nav />
         <Outlet />
       </StoreProvider>

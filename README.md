@@ -1,4 +1,4 @@
-<p align="center">
+npm <p align="center">
 <img src="./locket-love/branding/header.png"/>
 </p>
 
