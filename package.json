@@ -1,10 +1,13 @@
 {
   "name": "little-trinkets",
   "version": "1.0.0",
+  "engines": {
+    "node": "18.18.1"
+  },
   "description": "",
   "main": "server/server.js",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "node server --ignore client",
     "dev": "concurrently \"cd server && npm run start\" \"cd client && npm run dev\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
@@ -15,5 +18,11 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.0",
+    "mongodb": "^6.3.0",
+    "react-redux": "^9.1.0",
+    "redux": "^5.0.1"
   }
 }
