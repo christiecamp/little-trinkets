@@ -11,7 +11,7 @@ import {
 } from './actions';
 
 //define initial state
-export const initialState = {
+const initialState = {
   products: [],
   cart: [],
   cartOpen: false,
@@ -21,7 +21,7 @@ export const initialState = {
 
 //set initial state of the reducer
 //reducer - function that accepts the current state and an action. It returns a new state based on that action
-export const reducer = (state = initialState, action) => {
+export default function reducer(state = initialState, action) {
   let newState;
   switch (action.type) {
 

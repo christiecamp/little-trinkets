@@ -11,7 +11,6 @@ export function idbPromise(storeName, method, object) {
     const request = window.indexedDB.open('shop-shop', 1);
     //create variables to hold reference to database, transaction (tx), and object store
     let db, tx, store;
-
     //if version has changed (or if this is the first time using the database), run this method and create the three object stores
     request.onupgradeneeded = function() {
       const db = request.result;
@@ -49,10 +48,9 @@ export function idbPromise(storeName, method, object) {
           break;
         //get all from cart
         case 'get':
-          // eslint-disable-next-line no-case-declarations
-          const everything = store.getAll();
-          everything.onsuccess = function() {
-            resolve(everything.result);
+          const all = store.getAll();
+          all.onsuccess = function() {
+            resolve(all.result);
           };
           break;
         //delete from cart

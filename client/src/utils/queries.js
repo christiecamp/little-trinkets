@@ -17,6 +17,15 @@ export const QUERY_PRODUCTS = gql`
   }
 `;
 
+//checkout query
+export const QUERY_CHECKOUT = gql`
+  query getCheckout($products: [ID]!) {
+    checkout(products: $products) {
+      session
+    }
+  }
+`;
+
 //all products query
 export const QUERY_ALL_PRODUCTS = gql`
   {
@@ -61,15 +70,6 @@ export const QUERY_USER = gql`
           image
         }
       }
-    }
-  }
-`;
-
-//checkout query
-export const QUERY_CHECKOUT = gql`
-  query getCheckout($products: [ID]!) {
-    checkout(products: $products) {
-      session
     }
   }
 `;
