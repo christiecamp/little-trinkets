@@ -1,4 +1,4 @@
-npm <p align="center">
+<p align="center">
 <img src="./locket-love/branding/header.png"/>
 
 </p>
@@ -36,6 +36,9 @@ npm <p align="center">
 
 ### ![overview](./locket-love/branding/1.png)
 
+`LITTLE TRINKETS` is an interactive e-commerce shopping app built with [Redux](https://redux.js.org/), [GraphQL](https://www.apollographql.com/) API and Apollo Server. The app is also built using [MERN Stack](https://www.mongodb.com/mern-stack) - with a [React](https://react.dev/) **front end**, [MongoDB](https://www.mongodb.com/) **database**, and [Node.js](https://nodejs.org/en)/[Express.js](https://www.npmjs.com/package/express) **server and API**.
+
+> The [.npmrc](https://docs.npmjs.com/cli/v10/configuring-npm/npmrc) file will set config values specific to this project, and ensures the app will deploy properly to [Heroku](https://www.heroku.com).
 
 
 ### ![user-story](./locket-love/branding/9.png)
@@ -62,7 +65,7 @@ npm <p align="center">
 
 The application is invoked using the following commands:
 
-##### _Clone the repository in your local development enviornment_
+##### *Clone the repository in your local development enviornment*
 
 ```javascript
 git clone https://github.com/christiecamp/little-trinkets.git
@@ -96,11 +99,11 @@ npm run dev
 
 4. **Shop for products** by category
 
-5. _View_, _save_, & _delete_ your selected products in **Order History**.
+5. *View*, *save*, & *delete* your selected products in **Order History**.
 
 6. Checkout products through [stripe]()
 
-7. _Logout_ to leave application.
+7. *Logout* to leave application.
 
 ##### view [demo videos](#demo) for further help
 
