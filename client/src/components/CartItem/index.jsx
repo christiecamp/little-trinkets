@@ -1,5 +1,5 @@
 //react dependencies
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 //import actions
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 //import helpers
