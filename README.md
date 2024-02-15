@@ -43,21 +43,21 @@
 
 ### ![user-story](./locket-love/branding/9.png)
 
-<p align="center">
+<!-- <p align="center">
   <img src="./locket-love/branding/user-story.png"/>
-</p>
+</p> -->
 
 ### ![acceptance-criteria](./locket-love/branding/10.png)
 
-<p align="center">
+<!-- <p align="center">
   <img src="./locket-love/branding/ac.png"/>
-</p>
+</p> -->
 
 ### ![trinket-list](./locket-love/branding/11.png)
 
 <p align="center">
-  <img src="./locket-love/branding/trinket-list.png"/>
-</p>
+  <!-- <img src="./locket-love/branding/trinket-list.png"/>
+</p> -->
 
 #
 
@@ -117,9 +117,9 @@ npm run dev
 
 ### ![demo](./locket-love/branding/13.png)
 
-<p align="center">
+<!-- <p align="center">
 <img src="./locket-love/demo/trinketsgif"/>
-</p>
+</p> -->
 
 #
 
