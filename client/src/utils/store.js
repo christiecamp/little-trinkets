@@ -1,5 +1,5 @@
 // import createStore 
-import { configureStore} from 'redux';
+import { configureStore } from 'redux';
 
 // import the reducer file
 import reducers from './reducers';
